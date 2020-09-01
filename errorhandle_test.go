@@ -3,7 +3,7 @@ package errorhandle_test
 import (
 	"testing"
 
-	"github.com/Khdbble/errorhandle/errorhandle"
+	"github.com/Khdbble/errorhandle"
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 
@@ -12,4 +12,3 @@ func TestAnalyzer(t *testing.T) {
 	testdata := analysistest.TestData()
 	analysistest.Run(t, testdata, errorhandle.Analyzer, "a")
 }
-

@@ -1,7 +1,15 @@
 package a
 
-func f() {
-	// The pattern can be written in regular expression.
-	var gopher int // want "pattern"
-	print(gopher)  // want "identifier is gopher"
+import (
+	"fmt"
+	"strconv"
+)
+
+var (
+	a, _ = strconv.Atoi("tt") // want "receiving error with _"
+)
+
+func main() {
+	c, _ := strconv.Atoi("rr") // want "receiving error with _"
+	fmt.Println(c)
 }

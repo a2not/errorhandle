@@ -3,6 +3,7 @@ package errorhandle
 import (
 	"go/ast"
 
+	"github.com/gostaticanalysis/analysisutil"
 	"golang.org/x/tools/go/analysis"
 	"golang.org/x/tools/go/analysis/passes/inspect"
 	"golang.org/x/tools/go/ast/inspector"
@@ -30,12 +31,21 @@ func run(pass *analysis.Pass) (interface{}, error) {
 	inspect.Preorder(nodeFilter, func(n ast.Node) {
 		switch n := n.(type) {
 		case *ast.Ident:
-			if n.Name == "gopher" {
-				pass.Reportf(n.Pos(), "identifier is gopher")
+			obj, ok := pass.TypesInfo.Defs[n]
+			if !ok || obj == nil {
+				return
 			}
+
+			if obj.Name() != "_" {
+				return
+			}
+
+			if !analysisutil.ImplementsError(obj.Type()) {
+				return
+			}
+			pass.Reportf(n.Pos(), "receiving error with _")
 		}
 	})
 
 	return nil, nil
 }
-

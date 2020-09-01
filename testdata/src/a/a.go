@@ -6,10 +6,17 @@ import (
 )
 
 var (
-	a, _ = strconv.Atoi("tt") // want "receiving error with _"
+	_, _ = strconv.Atoi("foo") // want "receiving error with _"
 )
 
 func main() {
-	c, _ := strconv.Atoi("rr") // want "receiving error with _"
-	fmt.Println(c)
+	_, err := strconv.Atoi("bar") // OK
+	if err != nil {
+		panic(err)
+	}
+
+	_, _ = strconv.Atoi("baz") // want "receiving error with _"
+
+	a, _ := strconv.Atoi("qux") // want "receiving error with _"
+	fmt.Println(a)
 }

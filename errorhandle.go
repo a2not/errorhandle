@@ -9,7 +9,7 @@ import (
 	"golang.org/x/tools/go/ast/inspector"
 )
 
-const doc = "errorhandle is ..."
+const doc = "errorhandle is a static analysis tool which checks if received errors are properly handled."
 
 // Analyzer is ...
 var Analyzer = &analysis.Analyzer{

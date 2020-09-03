@@ -21,13 +21,8 @@ var (
 
 // exceptional case pointed out by @110y
 // https://github.com/Khdbble/errorhandle/pull/3#issuecomment-686300397
-var _ error = (*myerr1)(nil) // OK
+var _ error = (*myerr)(nil) // OK
 
-type myerr1 struct{}
-
-func (e *myerr1) Error() string {
-	return "myerr"
-}
 
 func main() {
 	_, err := f() // OK

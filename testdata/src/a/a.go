@@ -23,7 +23,6 @@ var (
 // https://github.com/Khdbble/errorhandle/pull/3#issuecomment-686300397
 var _ error = (*myerr)(nil) // OK
 
-
 func main() {
 	_, err := f() // OK
 	if err != nil {
@@ -34,7 +33,9 @@ func main() {
 
 	a, _ := f() // want "receiving error with _"
 
-	a, _ = 12, error(nil) // want "receiving error with _"
+	a, _ = 12, (error)(nil) // OK
+
+	_ = errors.New("foo") // want "receiving error with _"
 
 	_, _ = 12, "foo" // OK
 

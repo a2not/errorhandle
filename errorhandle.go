@@ -2,6 +2,7 @@ package errorhandle
 
 import (
 	"errors"
+	"fmt"
 	"go/ast"
 	"go/types"
 
@@ -51,6 +52,16 @@ func run(pass *analysis.Pass) (interface{}, error) {
 func assignErrorToBlank(lhs interface{}, rhs []ast.Expr, pass *analysis.Pass) (bool, error) {
 	rhsTypes := make([]types.Type, 0)
 	for _, expr := range rhs {
+		// ignore when assigning of _ = (error)(nil)
+		callexpr, ok := expr.(*ast.CallExpr)
+		if ok && len(callexpr.Args) == 1 {
+			ident, ok := callexpr.Args[0].(*ast.Ident)
+			if ok && ident.Name == "nil" {
+				rhsTypes = append(rhsTypes, types.Typ[types.Int8])
+				continue
+			}
+		}
+
 		typ := pass.TypesInfo.TypeOf(expr)
 		switch typ := typ.(type) {
 		case *types.Tuple:

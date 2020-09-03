@@ -2,7 +2,6 @@ package errorhandle
 
 import (
 	"errors"
-	"fmt"
 	"go/ast"
 	"go/types"
 

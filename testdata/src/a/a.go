@@ -21,11 +21,11 @@ var (
 
 // exceptional case pointed out by @110y
 // https://github.com/Khdbble/errorhandle/pull/3#issuecomment-686300397
-var _ error = (*myerr)(nil) // OK
+var _ error = (*myerr1)(nil) // OK
 
-type myerr struct{}
+type myerr1 struct{}
 
-func (e *myerr) Error() string {
+func (e *myerr1) Error() string {
 	return "myerr"
 }
 

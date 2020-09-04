@@ -33,6 +33,10 @@ func main() {
 		panic(err)
 	}
 
+	if a, _ := f(); a != 0 { // want "receiving error with _"
+		panic(err)
+	}
+
 	_, err = f() // want "error received but not handled"
 
 	b := errors.New("foo") // want "error received but not handled"

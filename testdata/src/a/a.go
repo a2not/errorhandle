@@ -29,6 +29,14 @@ func main() {
 		panic(err)
 	}
 
+	if _, err := f(); err != nil { // OK
+		panic(err)
+	}
+
+	_, err = f() // want "error received but not handled"
+
+	b := errors.New("foo") // want "error received but not handled"
+
 	_, _ = f() // want "receiving error with _"
 
 	a, _ := f() // want "receiving error with _"
@@ -55,5 +63,5 @@ func main() {
 	if !ok {
 	}
 
-	print(a)
+	print(a, b)
 }

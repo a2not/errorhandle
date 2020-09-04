@@ -33,6 +33,10 @@ func main() {
 		panic(err)
 	}
 
+	if _, err := f(); err == nil { // OK
+		panic(err)
+	}
+
 	if a, _ := f(); a != 0 { // want "receiving error with _"
 		panic(err)
 	}

@@ -1,6 +1,6 @@
 # errorhandle
 
-Static analysis tool for Go that checks if errors are properly handled
+Static analysis tool for Go that checks if errors are assigned to blank identifiers
 
 ## Install
 ```

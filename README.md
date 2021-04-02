@@ -4,7 +4,7 @@ Static analysis tool for Go that checks if errors are assigned to blank identifi
 
 ## Install
 ```
-go get -u github.com/Khdbble/errorhandle
+go get -u github.com//errorhandle
 ```
 
 ## what this does

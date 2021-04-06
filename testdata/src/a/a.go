@@ -20,7 +20,7 @@ var (
 )
 
 // exceptional case pointed out by @110y
-// https://github.com/Khdbble/errorhandle/pull/3#issuecomment-686300397
+// https://github.com/a2not/errorhandle/pull/3#issuecomment-686300397
 var _ error = (*myerr)(nil) // OK
 
 func main() {

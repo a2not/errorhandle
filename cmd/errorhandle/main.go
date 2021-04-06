@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/Khdbble/errorhandle"
+	"github.com/a2not/errorhandle"
 	"golang.org/x/tools/go/analysis/unitchecker"
 )
 

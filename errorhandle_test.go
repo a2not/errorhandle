@@ -3,7 +3,7 @@ package errorhandle_test
 import (
 	"testing"
 
-	"github.com/Khdbble/errorhandle"
+	"github.com/a2not/errorhandle"
 	"golang.org/x/tools/go/analysis/analysistest"
 )
 

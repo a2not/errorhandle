@@ -1,5 +1,5 @@
-module github.com/Khdbble/errorhandle
+module github.com/a2not/errorhandle
 
 go 1.15
 
-require golang.org/x/tools v0.0.0-20200831203904-5a2aa26beb65
+require golang.org/x/tools v0.1.0

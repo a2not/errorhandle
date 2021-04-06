@@ -1,5 +1,5 @@
 // This file can build as a plugin for golangci-lint by below command.
-//    go build -buildmode=plugin -o path_to_plugin_dir github.com/Khdbble/errorhandle/plugin/errorhandle
+//    go build -buildmode=plugin -o path_to_plugin_dir github.com/a2not/errorhandle/plugin/errorhandle
 // See: https://golangci-lint.run/contributing/new-linters/#how-to-add-a-private-linter-to-golangci-lint
 
 package main
@@ -7,13 +7,13 @@ package main
 import (
 	"strings"
 
-	"github.com/Khdbble/errorhandle"
+	"github.com/a2not/errorhandle"
 	"golang.org/x/tools/go/analysis"
 )
 
 // flags for Analyzer.Flag.
 // If you would like to specify flags for your plugin, you can put them via 'ldflags' as below.
-//     $ go build -buildmode=plugin -ldflags "-X 'main.flags=-opt val'" github.com/Khdbble/errorhandle/plugin/errorhandle
+//     $ go build -buildmode=plugin -ldflags "-X 'main.flags=-opt val'" github.com/a2not/errorhandle/plugin/errorhandle
 var flags string
 
 // AnalyzerPlugin provides analyzers as a plugin.

@@ -11,3 +11,10 @@ go get -u github.com/a2not/errorhandle
 
 * detect receiving of returning `error` type value with `_` variable
 
+## how to use it
+
+```
+make build
+export PATH=$PATH:~/go/src/github.com/a2not/errorhandle/cmd/errorhandle
+go vet -vettool=`which errorhandle`
+```

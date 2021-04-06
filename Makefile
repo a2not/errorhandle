@@ -4,4 +4,8 @@ test: format
 format:
 	goimports -w errorhandle.go
 
-.PHONY: test format
+build:
+	cd ./cmd/errorhandle && go build -o errorhandle
+
+.PHONY: test format build
+

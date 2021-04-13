@@ -1,5 +1,8 @@
 # errorhandle
 
+[![Go](https://github.com/a2not/errorhandle/actions/workflows/go.yml/badge.svg)](https://github.com/a2not/errorhandle/actions/workflows/go.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 Static analysis tool for Go that checks if errors are assigned to blank identifiers
 
 ## Install

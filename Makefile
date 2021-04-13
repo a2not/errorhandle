@@ -1,4 +1,4 @@
-test: format
+test:
 	go test
 
 format:

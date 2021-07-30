@@ -5,6 +5,8 @@
 
 Static analysis tool for Go that checks if errors are assigned to blank identifiers
 
+https://pkg.go.dev/github.com/a2not/errorhandle
+
 ## Install
 ```
 go get -u github.com/a2not/errorhandle
